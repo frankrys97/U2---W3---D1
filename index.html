@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+      crossorigin="anonymous"
+    />
+    <style>
+      .img-fluid {
+        object-fit: contain;
+        aspect-ratio: 16/9;
+      }
+
+      .carousel-control-prev-icon {
+        background-image: url("https://cdn.icon-icons.com/icons2/1674/PNG/512/arrowback_111142.png") !important;
+      }
+
+      .carousel-control-next-icon {
+        background-image: url("https://cdn.icon-icons.com/icons2/1674/PNG/512/arrowforward_110965.png") !important;
+      }
+      .carousel-control-prev,
+      .carousel-control-next {
+        opacity: 1;
+      }
+    </style>
+    <title>Oop - Object Oriented Programming</title>
+  </head>
+  <body>
+    <h1 class="text-center my-2">Sign up your friend!</h1>
+
+    <div class="container my-4 p-2">
+      <div class="row">
+        <div class="col-4">
+          <form id="form">
+            <div class="mb-3">
+              <label for="petName" class="form-label fw-semibold"
+                >Pet Name</label
+              >
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="petName"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="ownerName" class="form-label fw-semibold"
+                >Owner Name</label
+              >
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="ownerName"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="species" class="form-label fw-semibold"
+                >Species</label
+              >
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="species"
+                aria-describedby="emailHelp"
+              />
+            </div>
+            <div class="mb-3">
+              <label for="breed" class="form-label fw-semibold">Breed</label>
+              <input
+                required
+                type="text"
+                class="form-control"
+                id="breed"
+                aria-describedby="emailHelp"
+              />
+            </div>
+
+            <button
+              type="submit"
+              class="btn btn-warning fw-semibold text-center p-2"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
+        <div class="col-8">
+          <div
+            id="carouselExample"
+            class="carousel slide"
+            data-bs-ride="carousel"
+          >
+            <div class="carousel-inner">
+              <div class="carousel-item active" data-bs-interval="2000">
+                <img
+                  src="https://images.unsplash.com/photo-1529778873920-4da4926a72c2?q=80&w=2853&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="d-block img-fluid"
+                  alt="cat"
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  src="https://images.unsplash.com/photo-1552053831-71594a27632d?q=80&w=2762&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="d-block img-fluid"
+                  alt="dog"
+                />
+              </div>
+              <div class="carousel-item" data-bs-interval="2000">
+                <img
+                  src="https://plus.unsplash.com/premium_photo-1661897154120-5b27cd6a0bd5?q=80&w=2203&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                  class="d-block img-fluid"
+                  alt="snake"
+                />
+              </div>
+            </div>
+            <button
+              class="carousel-control-prev"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="prev"
+            >
+              <span
+                class="carousel-control-prev-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button
+              class="carousel-control-next"
+              type="button"
+              data-bs-target="#carouselExample"
+              data-bs-slide="next"
+            >
+              <span
+                class="carousel-control-next-icon"
+                aria-hidden="true"
+              ></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="container mb-4">
+      <div class="row">
+        <div class="col">
+          <h2 class="text-center">Pets</h2>
+          <table class="table">
+            <thead>
+              <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col">Owner Name</th>
+                <th scope="col">Species</th>
+                <th scope="col">Breed</th>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+      crossorigin="anonymous"
+    ></script>
+    <script src="./index.js"></script>
+  </body>
+</html>
