@@ -52,23 +52,40 @@ form.addEventListener("submit", (event) => {
 
 const tbody = document.querySelector("tbody");
 
+let ownerColors = {};
+
+function randomColor() {
+  let color = "#";
+  for (var i = 0; i < 6; i++) {
+    let randomColor = Math.floor(Math.random() * 16).toString(16);
+    color += randomColor;
+  }
+
+  return color;
+}
+
 const savePets = () => {
   tbody.innerHTML = "";
+
   pets.forEach((pet, index) => {
     const trPets = document.createElement("tr");
     trPets.innerHTML = `<td>${index + 1}</td> <td>${pet.petName}</td> <td>${
       pet.ownerName
     }</td> <td>${pet.species}</td> <td>${pet.breed}</td>`;
 
+    let ownerColor = ownerColors[pet.ownerName];
+    if (!ownerColor) {
+      ownerColor = randomColor();
+      ownerColors[pet.ownerName] = ownerColor;
+    }
+
     pets.forEach((otherPet, otherIndex) => {
       if (index !== otherIndex && Pet.hasSameOwner(pet, otherPet)) {
         const tdSameOwner = trPets.querySelectorAll("td")[2];
-        tdSameOwner.classList.add("bg-primary");
+        tdSameOwner.style.backgroundColor = ownerColor;
       }
     });
 
     tbody.appendChild(trPets);
   });
 };
-
-
