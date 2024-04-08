@@ -56,7 +56,7 @@ let ownerColors = {};
 
 function randomColor() {
   let color = "#";
-  for (var i = 0; i < 6; i++) {
+  for (let i = 0; i < 6; i++) {
     let randomColor = Math.floor(Math.random() * 16).toString(16);
     color += randomColor;
   }
